@@ -204,7 +204,7 @@ class ProviderAssetMarket(Base):
     best_ask: Mapped[float] = mapped_column(nullable=True, comment="Best ask price")
 
     def __repr__(self):
-        return f"{ProviderAssetMarket.__name__}(id={self.id}, provider_id={self.provider_id}, asset_id={self.asset_id}, market_type={self.market_type})"
+        return f"{ProviderAssetMarket.__name__}(timestamp={self.timestamp}, provider_id={self.provider_id}, asset_id={self.asset_id})"
 
 
 class ContentType(Base):
@@ -253,7 +253,7 @@ class ProviderContent(Base):
     )
 
     def __repr__(self):
-        return f"{ProviderContent.__name__}(id={self.id}, provider_id={self.provider_id}, content_type={self.content_type})"
+        return f"{ProviderContent.__name__}(id={self.id}, timestamp={self.timestamp}, provider_id={self.provider_id}, content_type_id={self.content_type_id}, provider_external_code={self.provider_external_code})"
 
 
 class AssetContent(Base):
